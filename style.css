@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #2E3F52;
+    perspective: 900px;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(-19deg) rotateY(-51deg);
+    transform-style: preserve-3d;
+    /* perspective: 900px; */
+    width: 300px;
+    height: 300px;
+    transition: transform 1s ease;
+}
+
+.container > *{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.212);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    /* border: 2px solid #00f; */
+    font-size: 30px;
+    line-height: 300px;
+    transform: rotateX(90deg) rotateY(90deg);
+    transform-style: preserve-3d;
+}
+
+.container:hover{
+    transform:translate(-50%,-50%) rotateX(-19deg) rotateY(-51deg) translate3d(0,-50px,0);
+}
+
+.front{
+    transform: translate3d(0,0,150px);
+}
+
+.back{
+    transform: translate3d(0,0,-150px) rotateY(180deg);
+}
+
+.left{
+    transform: translate3d(-150px,0,0) rotateY(-90deg);
+}
+
+.right{
+    transform: translate3d(150px,0,0) rotateY(90deg);
+}
+
+.bottom{
+    transform: translate3d(0,150px,0) rotateX(-90deg) rotateZ(-90deg);
+
+}
+
+.top{
+    transform: translate3d(0,-150px,0) rotateX(90deg) rotateZ(90deg);
+    
+}
+
+.container:hover .shadow{
+    transform: translate3d(0px,150px,0px) rotateX(90deg);
+    box-shadow: 0 0 100px -20px rgb(0, 0, 0);
+
+}
+
+.shadow{
+    box-shadow: 0 0 30px 5px rgb(39, 39, 39);
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    transform: translate3d(0px,150px,0px) rotateX(90deg);
+
+}
+
+
+/* +++++++++++++++++++++ */
+
+
+
+.h1{
+    background-color: #28BC64;
+}
+
+
+.h1.front{
+    transform: translate3d(0,0,0px);
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    animation: all-h 2s linear alternate infinite;
+}
+
+.h1.back{
+    transform: translate3d(0,0,0px) ;
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    animation: all-h 2s linear alternate infinite;
+}
+
+.h1.left{
+    transform: translate3d(0px,0,0);
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0;  
+    animation: all-h 2s linear alternate infinite;
+}
+
+.h1.right{
+    transform: translate3d(0px,0,0);
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0;  
+    animation: all-h 2s linear alternate infinite;
+}
+
+.h1.bottom{
+    transform: translate3d(0,0px,0);
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    animation: all-h 2s linear alternate infinite;
+}
+
+.h1.top{
+    /* transform: translate3d(0,0,0); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* bottom: 0; */
+    animation: top 2s linear alternate infinite;
+}
+
+@keyframes top {
+    0%{
+        transform: translate3d(0,0,0px);
+    }
+    100%{
+        transform: translate3d(0,0,-202px);
+    }  
+}
+
+
+@keyframes all-h {
+    0%{
+        height: 100%;
+    }
+    100%{
+        height: 100px;
+    }  
+}
+
